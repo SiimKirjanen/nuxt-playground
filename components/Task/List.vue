@@ -22,7 +22,7 @@
     <div class="tasks-wrap">
     <p>You have {{ taskStore.totalCount }} tasks left to do. Favourite tasks count is {{ taskStore.favCount }}</p>
     <div class="filter-switch">
-      <!-- <el-switch v-model="filterFavs" active-text="All tasks" inactive-text="Fav tasks" /> -->
+      <label>Toggle fav tasks <UToggle color="primary" v-model="filterFavs" /></label>
     </div>
     <transition name="switch">
       <div v-if="tasks.length">
@@ -31,7 +31,13 @@
         </transition-group>
       </div>
       <div v-else>
-       <!--  <el-alert title="Woohoo, nothing left todo!" type="success" show-icon /> -->
+        <UAlert
+          icon="i-heroicons-command-line"
+          description="Woohoo, nothing left todo!"
+          title="Heads up!"
+          color="primary"
+          variant="solid"
+        />
       </div>
     </transition>
   </div>
@@ -48,8 +54,10 @@
     position: relative;
   }
   .filter-switch {
+  
     display: flex;
     justify-content: right;
+    align-items: center;
     margin-bottom: 16px;
   }
   /* list transitions */

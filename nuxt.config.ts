@@ -10,5 +10,14 @@ export default defineNuxtConfig({
   },
   modules: [
     '@pinia/nuxt',
+    '@nuxt/ui',
   ],
+  app: {
+    head: {
+      link: [{
+        rel: 'stylesheet',
+        href: 'https://fonts.googleapis.com/icon?family=Material+Icons'
+      }]
+    }
+  }
 })

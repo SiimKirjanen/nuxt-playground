@@ -29,14 +29,15 @@
     padding: 8px 20px;
     background: #fff;
     margin-bottom: 20px;
-    border-radius: var(--el-input-border-radius,var(--el-border-radius-base));
-    box-shadow: 0 0 0 1px var(--el-input-border-color,var(--el-border-color)) inset;
+    border-radius: 4px;
+    border: 1px solid #ddd;
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
-  .task h3, .task .icons {
-    display: inline-block;
+  .icons {
+    display: flex;
+    align-items: center;
   }
   .task i.active {
     color: #ff005d;
