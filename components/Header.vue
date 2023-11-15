@@ -8,6 +8,7 @@
       <ul class="flex gap-4">
         <li><NuxtLink to="/">Home</NuxtLink></li>
         <li><NuxtLink to="/products">Products</NuxtLink></li>
+        <li><NuxtLink to="/tasks">Tasks</NuxtLink></li>
         <li><NuxtLink to="/examples">Examples</NuxtLink></li>
       </ul>
     </nav>
@@ -15,5 +16,7 @@
 </template>
 
 <style scoped>
-
+.router-link-exact-active {
+  color: #12b488;
+}
 </style>
