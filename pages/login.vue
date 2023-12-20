@@ -1,9 +1,14 @@
 <script setup lang="ts">
-const { status, data, signIn, signOut } = useAuth();
+const { status, signIn, signOut } = useAuth();
 </script>
 <template>
   <div>
-    <UButton @click="signIn">Sign in</UButton>
+    <UButton v-if="status === 'unauthenticated'" @click="signIn"
+      >Sign in</UButton
+    >
+    <UButton v-if="status === 'authenticated'" @click="signOut"
+      >Sign out</UButton
+    >
   </div>
 </template>
 

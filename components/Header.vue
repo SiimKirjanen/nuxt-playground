@@ -12,6 +12,7 @@
         <li><NuxtLink to="/swr">SWR</NuxtLink></li>
         <li><NuxtLink to="/isr">ISR</NuxtLink></li>
         <li><NuxtLink to="/spa">SPA</NuxtLink></li>
+        <li><NuxtLink to="/protected">Protected page</NuxtLink></li>
         <li><NuxtLink to="/login">Login</NuxtLink></li>
       </ul>
     </nav>
