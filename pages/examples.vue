@@ -1,4 +1,5 @@
 <script setup lang="ts">
+const counter = useState("counter", () => Math.round(Math.random() * 1000));
 function someErrorLogger(err: unknown) {
   console.log("got an error", err);
 }
@@ -10,6 +11,7 @@ function someErrorLogger(err: unknown) {
       <h4>Errors</h4>
       <ExamplesErrorThrowing />
     </div>
+
     <div>
       <NuxtErrorBoundary @error="someErrorLogger">
         <h4>Errors surrounded with NuxtErrorBoundary</h4>
@@ -19,6 +21,12 @@ function someErrorLogger(err: unknown) {
           <UButton @click="clearError">This will clear the error.</UButton>
         </template>
       </NuxtErrorBoundary>
+    </div>
+
+    <div>
+      Counter: {{ counter }}
+      <UButton @click="counter++">+</UButton>
+      <UButton @click="counter--">-</UButton>
     </div>
   </div>
 </template>
