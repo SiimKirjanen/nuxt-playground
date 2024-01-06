@@ -8,7 +8,12 @@ export default defineNuxtConfig({
       autoprefixer: {},
     },
   },
-  modules: ["@pinia/nuxt", "@nuxt/ui", "@sidebase/nuxt-auth"],
+  modules: [
+    "@pinia/nuxt",
+    "@nuxt/ui",
+    "@sidebase/nuxt-auth",
+    "@nuxt/test-utils/module",
+  ],
   auth: {
     provider: {
       type: "authjs",
