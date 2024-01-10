@@ -1,6 +1,4 @@
-<script setup lang="ts">
-
-</script>
+<script setup lang="ts"></script>
 
 <template>
   <div class="wrap">
@@ -10,8 +8,8 @@
 </template>
 
 <style scoped>
- .wrap {
-    max-width: 640px;
-    margin: 20px auto;
-  }
+.wrap {
+  max-width: 640px;
+  margin: 20px auto;
+}
 </style>
