@@ -15,6 +15,7 @@ export default defineNuxtConfig({
     "@nuxt/test-utils/module",
   ],
   auth: {
+    baseURL: process.env.AUTH_ORIGIN,
     provider: {
       type: "authjs",
     },
@@ -34,5 +35,9 @@ export default defineNuxtConfig({
     "/swr": { swr: 3600 },
     "/isr": { isr: true },
     "/spa": { ssr: false },
+  },
+  runtimeConfig: {
+    // The private keys which are only available server-side
+    authSecret: process.env.AUTH_SECRET,
   },
 });
