@@ -1,0 +1,8 @@
+{
+  "extends": ["@nuxtjs/eslint-config-typescript"],
+  "rules": {
+    "no-console": "off",
+    "quotes": [2, "double", { "avoidEscape": true }],
+    "semi": [2, "always"]
+  }
+}

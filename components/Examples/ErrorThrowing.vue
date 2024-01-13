@@ -2,8 +2,8 @@
 const onClick = () => {
   throw createError({
     statusCode: 500,
-    statusMessage: "You did just throw and Error!",
-    fatal: true,
+    statusMessage: 'You did just throw and Error!',
+    fatal: true
   });
 };
 </script>

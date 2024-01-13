@@ -1,18 +1,18 @@
 <template>
-    <div>
-      <div class="grid grid-cols-4 gap-5">
-        <div v-for="p in products">
-          <ProductCard :product="p" />
-        </div>
+  <div>
+    <div class="grid grid-cols-4 gap-5">
+      <div v-for="p in products">
+        <ProductCard :product="p" />
       </div>
     </div>
-  </template>
-  
+  </div>
+</template>
+
 <script setup>
-    //  fetch the products
-    const { data: products } = await useFetch('https://fakestoreapi.com/products')
-  
-    definePageMeta({
-      layout: "products",
-    })
+//  fetch the products
+const { data: products } = await useFetch('https://fakestoreapi.com/products');
+
+definePageMeta({
+  layout: 'products'
+});
 </script>

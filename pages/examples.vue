@@ -1,7 +1,7 @@
 <script setup lang="ts">
-const counter = useState("counter", () => Math.round(Math.random() * 1000));
+const counter = useState('counter', () => Math.round(Math.random() * 1000));
 function someErrorLogger(err: unknown) {
-  console.log("got an error", err);
+  console.log('got an error', err);
 }
 </script>
 

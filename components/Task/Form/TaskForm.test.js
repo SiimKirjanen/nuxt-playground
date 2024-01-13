@@ -1,10 +1,10 @@
-import { describe, it, expect, vi, beforeEach } from "vitest";
-import { mount } from "@vue/test-utils";
-import { createTestingPinia } from "@pinia/testing";
-import TaskForm from "./TaskForm.vue";
-import { useTaskStore } from "./../../../stores/TaskStore";
+import { describe, it, expect, vi, beforeEach } from 'vitest';
+import { mount } from '@vue/test-utils';
+import { createTestingPinia } from '@pinia/testing';
+import TaskForm from './TaskForm.vue';
+import { useTaskStore } from './../../../stores/TaskStore';
 
-describe("TaskForm", () => {
+describe('TaskForm', () => {
   let wrapper = null;
 
   beforeEach(() => {
@@ -13,28 +13,28 @@ describe("TaskForm", () => {
       global: {
         plugins: [
           createTestingPinia({
-            createSpy: vi.fn,
-          }),
-        ],
-      },
+            createSpy: vi.fn
+          })
+        ]
+      }
     });
   });
 
-  it("should mount TaskForm", () => {
-    expect(wrapper.find("h2").text()).toBe("Add task");
+  it('should mount TaskForm', () => {
+    expect(wrapper.find('h2').text()).toBe('Add task');
   });
 
-  it("should call addTask", () => {
+  it('should call addTask', () => {
     const store = useTaskStore();
 
-    expect(wrapper.find("h2").text()).toBe("Add task");
-    wrapper.vm.state.taskTitle = "siim";
+    expect(wrapper.find('h2').text()).toBe('Add task');
+    wrapper.vm.state.taskTitle = 'siim';
     wrapper.vm.handleSubmit();
 
     expect(store.addTask).toHaveBeenCalledWith({
-      title: "siim",
+      title: 'siim',
       isFav: false,
-      id: expect.any(Number),
+      id: expect.any(Number)
     });
   });
 });

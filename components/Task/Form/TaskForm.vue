@@ -1,26 +1,26 @@
 <script lang="ts" setup>
-import { reactive } from "vue";
-import type { FormError, FormSubmitEvent } from "#ui/types";
-import { useTaskStore } from "../../../stores/TaskStore";
+import { reactive } from 'vue';
+import type { FormError, FormSubmitEvent } from '#ui/types';
+import { useTaskStore } from '../../../stores/TaskStore';
 
 const taskStore = useTaskStore();
 const state = reactive({
-  taskTitle: "",
+  taskTitle: ''
 });
 
 const handleSubmit = () => {
   taskStore.addTask({
     title: state.taskTitle,
     isFav: false,
-    id: Math.floor(Math.random() * 1000000),
+    id: Math.floor(Math.random() * 1000000)
   });
-  state.taskTitle = "";
+  state.taskTitle = '';
 };
 
 const validate = (state: any): FormError[] => {
   const errors = [];
 
-  if (!state.taskTitle) errors.push({ path: "title", message: "Required" });
+  if (!state.taskTitle) errors.push({ path: 'title', message: 'Required' });
 
   return errors;
 };
