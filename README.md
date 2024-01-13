@@ -1,23 +1,9 @@
-# Nuxt 3 Minimal Starter
-
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
-
 ## Setup
 
 Make sure to install the dependencies:
 
 ```bash
-# npm
-npm install
-
-# pnpm
-pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
+npm ci
 ```
 
 ## Development Server
@@ -25,17 +11,13 @@ bun install
 Start the development server on `http://localhost:3000`:
 
 ```bash
-# npm
 npm run dev
+```
 
-# pnpm
-pnpm run dev
+When using Docker
 
-# yarn
-yarn dev
-
-# bun
-bun run dev
+```bash
+docker-compose -f docker-compose.dev.yml up
 ```
 
 ## Production
@@ -43,33 +25,37 @@ bun run dev
 Build the application for production:
 
 ```bash
-# npm
 npm run build
-
-# pnpm
-pnpm run build
-
-# yarn
-yarn build
-
-# bun
-bun run build
 ```
 
 Locally preview production build:
 
 ```bash
-# npm
 npm run preview
-
-# pnpm
-pnpm run preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
 ```
 
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+## Unit tests
+
+```bash
+npm run test:unit
+```
+
+## E2e tests
+
+Spin up dev server locally or in Docker. And start Cypress tests
+
+```bash
+npm run test:e2e
+```
+
+Or open Cypress UI
+
+```bash
+npm run cypress:open
+```
+
+Running e2e tests in Docker
+
+```bash
+docker-compose -f docker-compose.e2e.yml up --exit-code-from cypress
+```
