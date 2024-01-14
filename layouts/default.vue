@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Header />
+    <AppHeader />
     <div class="container mx-auto p-4">
       <slot />
     </div>
