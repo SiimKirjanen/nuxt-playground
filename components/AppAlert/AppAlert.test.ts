@@ -1,10 +1,10 @@
 import { describe, it, expect } from 'vitest';
 import { mount } from '@vue/test-utils';
-import Alert from './Alert.vue';
+import AppAlert from './AppAlert.vue';
 
-describe('Alert', () => {
-  it('should mount Alert', () => {
-    const wrapper = mount(Alert);
+describe('AppAlert', () => {
+  it('should mount AppAlert', () => {
+    const wrapper = mount(AppAlert);
 
     expect(wrapper.text()).toContain('This is an alert component');
   });

@@ -1,5 +1,5 @@
-import { NuxtAuthHandler } from '#auth';
 import GithubProvider from 'next-auth/providers/github';
+import { NuxtAuthHandler } from '#auth';
 
 export default NuxtAuthHandler({
   secret: useRuntimeConfig().authSecret,

@@ -16,7 +16,7 @@ function someErrorLogger(err: unknown) {
       <NuxtErrorBoundary @error="someErrorLogger">
         <h4>Errors surrounded with NuxtErrorBoundary</h4>
         <ExamplesErrorThrowing />
-        <template #error="{ error, clearError }">
+        <template #error="">
           <p>An error happened.</p>
           <UButton @click="clearError">This will clear the error.</UButton>
         </template>

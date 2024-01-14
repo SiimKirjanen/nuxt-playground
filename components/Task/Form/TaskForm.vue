@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { reactive } from 'vue';
-import type { FormError, FormSubmitEvent } from '#ui/types';
+import type { FormError } from '#ui/types';
 import { useTaskStore } from '../../../stores/TaskStore';
 
 const taskStore = useTaskStore();

@@ -25,7 +25,7 @@ onMounted(() => {
       </p>
       <div class="filter-switch">
         <label
-          >Toggle fav tasks <UToggle color="primary" v-model="filterFavs"
+          >Toggle fav tasks <UToggle v-model="filterFavs" color="primary"
         /></label>
       </div>
       <transition name="switch">

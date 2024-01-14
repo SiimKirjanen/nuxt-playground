@@ -1,10 +1,10 @@
 import { describe, it, expect } from 'vitest';
 import { mount } from '@vue/test-utils';
-import Header from './Header.vue';
+import AppHeader from './AppHeader.vue';
 
-describe('Header', () => {
-  it('should mount Header', () => {
-    const wrapper = mount(Header, {
+describe('AppHeader', () => {
+  it('should mount AppHeader', () => {
+    const wrapper = mount(AppHeader, {
       shallow: true,
       global: {
         stubs: {

@@ -1,10 +1,10 @@
 import { describe, it, expect } from 'vitest';
 import { mount } from '@vue/test-utils';
-import Footer from './Footer.vue';
+import AppFooter from './AppFooter.vue';
 
-describe('Footer', () => {
-  it('should mount Footer', () => {
-    const wrapper = mount(Footer, {
+describe('AppFooter', () => {
+  it('should mount AppFooter', () => {
+    const wrapper = mount(AppFooter, {
       shallow: true
     });
 

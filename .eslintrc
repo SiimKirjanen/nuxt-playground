@@ -1,8 +1,13 @@
 {
-  "extends": ["@nuxtjs/eslint-config-typescript"],
+  "extends": [
+    "@nuxtjs/eslint-config-typescript",
+    "plugin:prettier/recommended"
+  ],
   "rules": {
     "no-console": "off",
-    "quotes": [2, "double", { "avoidEscape": true }],
-    "semi": [2, "always"]
+    "quotes": [2, "single", { "avoidEscape": true }],
+    "semi": [2, "always"],
+    "vue/no-multiple-template-root": 0,
+    "vue/multi-word-component-names": "off"
   }
 }

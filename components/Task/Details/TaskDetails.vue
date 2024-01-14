@@ -1,6 +1,6 @@
 <script lang="ts" setup>
-defineProps(['task']);
 import { useTaskStore } from './../../../stores/TaskStore';
+defineProps(['task']);
 
 const taskStore = useTaskStore();
 </script>
