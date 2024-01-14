@@ -8,6 +8,7 @@ jobs:
       - uses: actions/checkout@v2
       - run: npm ci
       - run: npm run lint:check
+
   format:
     name: Prettier
     runs-on: ubuntu-latest
@@ -15,6 +16,7 @@ jobs:
       - uses: actions/checkout@v2
       - run: npm ci
       - run: npm run format:check
+
   e2e:
     name: Cypress e2e
     runs-on: ubuntu-latest
