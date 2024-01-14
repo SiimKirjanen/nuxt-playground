@@ -16,9 +16,16 @@ jobs:
       - run: npm ci
       - run: npm run format:check
   e2e:
-    name: Cypress e2e
+    name: E2e tests
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - run: npm ci
       - run: npm run test:e2e:ci
+  unit:
+    name: Unit tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: npm ci
+      - run: npm run test:unit
