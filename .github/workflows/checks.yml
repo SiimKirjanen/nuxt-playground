@@ -19,8 +19,23 @@ jobs:
     name: Cypress e2e
     runs-on: ubuntu-latest
     services:
-       - name: docker
-         image: docker:20.10.7
-ports:
+      - name: docker
+        image: docker:20.10.7
+        ports:
           - 8080:8080
         options: --entrypoint=/usr/bin/dockerd-entrypoint.sh
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Build Docker image
+        run: |
+          docker-compose -f docker-compose.e2e.yml build
+
+      - name: Run Docker containers
+        run: |
+          docker-compose -f docker-compose.e2e.yml up --exit-code-from cypress
+
+      - name: Cleanup
+        run: |
+          docker-compose -f docker-compose.e2e.yml down
