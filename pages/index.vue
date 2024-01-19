@@ -7,9 +7,8 @@ const csrfToken = await getCsrfToken();
 </script>
 
 <template>
-  <h1 class="text-3xl font-bold">Welcome to the Nuxt Playground</h1>
+  <h1 class="text-3xl font-bold">{{ $t('welcome') }}</h1>
   <p>Examples of Nuxt usage</p>
-  <p>{{ new Date() }}</p>
   <div>
     <h3 class="text-xl font-bold">Authentication Overview</h3>
     <p class="text-sm">

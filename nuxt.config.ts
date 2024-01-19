@@ -12,8 +12,15 @@ export default defineNuxtConfig({
     '@pinia/nuxt',
     '@nuxt/ui',
     '@sidebase/nuxt-auth',
-    '@nuxt/test-utils/module'
+    '@nuxt/test-utils/module',
+    '@nuxtjs/i18n'
   ],
+  i18n: {
+    locales: ['en', 'ee'],
+    defaultLocale: 'en',
+    detectBrowserLanguage: false,
+    vueI18n: './i18n.config.ts'
+  },
   auth: {
     baseURL: process.env.AUTH_ORIGIN,
     provider: {
@@ -31,7 +38,7 @@ export default defineNuxtConfig({
     }
   },
   routeRules: {
-    /*     "/": { prerender: true }, */
+    '/prerender': { prerender: true },
     '/swr': { swr: 3600 },
     '/isr': { isr: true },
     '/spa': { ssr: false }
