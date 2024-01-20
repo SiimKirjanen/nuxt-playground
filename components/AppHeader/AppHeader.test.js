@@ -1,6 +1,21 @@
-import { describe, it, expect } from 'vitest';
+import { describe, it, expect, vi } from 'vitest';
 import { mount } from '@vue/test-utils';
+import { mockNuxtImport } from '@nuxt/test-utils/runtime';
 import AppHeader from './AppHeader.vue';
+
+mockNuxtImport('useLocalePath', () => {
+  return () => (path) => path;
+});
+
+vi.mock('vue-i18n', () => {
+  return {
+    useI18n: () => {
+      return {
+        locale: 'en'
+      };
+    }
+  };
+});
 
 describe('AppHeader', () => {
   it('should mount AppHeader', () => {
@@ -11,12 +26,15 @@ describe('AppHeader', () => {
           NuxtLink: {
             template: "<div data-test='link'><slot></slot></div>"
           }
+        },
+        mocks: {
+          $t: (msg) => msg
         }
       }
     });
 
-    expect(wrapper.findAll('div[data-test="link"]').length).toBe(10);
-    expect(wrapper.findAll('li').length).toBe(9);
+    expect(wrapper.findAll('div[data-test="link"]').length).toBe(11);
+    expect(wrapper.findAll('li').length).toBe(10);
 
     expect(wrapper.findAll('div[data-test="link"]')[0].attributes('to')).toBe(
       '/'
@@ -46,6 +64,9 @@ describe('AppHeader', () => {
       '/protected'
     );
     expect(wrapper.findAll('div[data-test="link"]')[9].attributes('to')).toBe(
+      '/prerender'
+    );
+    expect(wrapper.findAll('div[data-test="link"]')[10].attributes('to')).toBe(
       '/login'
     );
   });
