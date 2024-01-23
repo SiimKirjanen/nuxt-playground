@@ -19,4 +19,8 @@ const csrfToken = await getCsrfToken();
     <pre v-if="csrfToken"><span>CSRF Token:</span> {{ csrfToken }}</pre>
     <pre v-if="providers"><span>Providers:</span> {{ providers }}</pre>
   </div>
+  <div>
+    <NuxtImg src="/audi.jpg" format="avif" sizes="sm:100vw md:400px lg:80vw" />
+    <NuxtImg src="/audi.jpg" sizes="sm:100vw md:400px lg:80vw" />
+  </div>
 </template>

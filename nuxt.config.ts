@@ -13,7 +13,8 @@ export default defineNuxtConfig({
     '@nuxt/ui',
     '@sidebase/nuxt-auth',
     '@nuxt/test-utils/module',
-    '@nuxtjs/i18n'
+    '@nuxtjs/i18n',
+    '@nuxt/image'
   ],
   i18n: {
     locales: ['en', 'ee'],
@@ -21,8 +22,11 @@ export default defineNuxtConfig({
     detectBrowserLanguage: false,
     vueI18n: './i18n.config.ts'
   },
+  image: {
+    // Options
+  },
   auth: {
-    baseURL: process.env.AUTH_ORIGIN,
+    baseURL: process.env.NUXT_AUTH_ORIGIN,
     provider: {
       type: 'authjs'
     }
@@ -42,9 +46,5 @@ export default defineNuxtConfig({
     '/swr': { swr: 3600 },
     '/isr': { isr: true },
     '/spa': { ssr: false }
-  },
-  runtimeConfig: {
-    // The private keys which are only available server-side
-    authSecret: process.env.AUTH_SECRET
   }
 });
