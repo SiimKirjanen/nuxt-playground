@@ -32,7 +32,7 @@ const validate = (state: any): FormError[] => {
   <UForm
     :validate="validate"
     :state="state"
-    class="space-y-4 mb-4"
+    class="mb-4 space-y-4"
     @submit="handleSubmit"
   >
     <UFormGroup label="Title" name="title">

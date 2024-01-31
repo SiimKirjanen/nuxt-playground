@@ -6,7 +6,7 @@ function someErrorLogger(err: unknown) {
 </script>
 
 <template>
-  <div class="grid gap-4 grid-cols-4">
+  <div class="grid grid-cols-4 gap-4">
     <div>
       <h4>Errors</h4>
       <ExamplesErrorThrowing />
@@ -16,8 +16,8 @@ function someErrorLogger(err: unknown) {
       <NuxtErrorBoundary @error="someErrorLogger">
         <h4>Errors surrounded with NuxtErrorBoundary</h4>
         <ExamplesErrorThrowing />
-        <template #error="">
-          <p>An error happened.</p>
+        <template #error="{ error, clearError }">
+          <p>An error happened. {{ error }}</p>
           <UButton @click="clearError">This will clear the error.</UButton>
         </template>
       </NuxtErrorBoundary>
@@ -28,5 +28,14 @@ function someErrorLogger(err: unknown) {
       <UButton @click="counter++">+</UButton>
       <UButton @click="counter--">-</UButton>
     </div>
+
+    <div>
+      <ClientOnly fallback-tag="span" fallback="Loading client only...">
+        <h2>Hey hey client only</h2>
+      </ClientOnly>
+    </div>
+  </div>
+  <div class="mt-6 border-2 border-solid border-indigo-600 p-3">
+    <h3>Tailwind playground</h3>
   </div>
 </template>
