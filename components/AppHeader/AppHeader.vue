@@ -4,13 +4,13 @@ const localePath = useLocalePath();
 </script>
 
 <template>
-  <header class="shadow-sm bg-white">
-    <div class="container mx-auto p-4 flex">
+  <header class="bg-white shadow-sm">
+    <div class="container mx-auto flex p-4">
       <NuxtLink :to="localePath('/')" class="font-bold">{{
         $t('nuxt_playground')
       }}</NuxtLink>
 
-      <ul class="flex gap-4 ml-auto">
+      <ul class="ml-auto flex gap-4">
         <li>
           <NuxtLink :to="localePath('/')">{{ $t('home') }}</NuxtLink>
         </li>
